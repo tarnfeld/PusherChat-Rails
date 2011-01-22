@@ -1,0 +1,26 @@
+ <div id="wrapper">
+	
+    <div class="header">
+		<div id="title">Pusher Chat</div>
+		<div id="beta-bookmark" class="tiptip" title="<b>I'm in Beta!</b><br />Please email any bugs you find to tarnfeld[at]me.com! Happy chatting.">It's only a beta!</div>
+    </div>
+
+    <div class="inner">
+		<p>A real-time chat web app powered by <a href="http://pusherapp.com/" target="_blank">Pusher</a>, built by <a href="http://tarnfeld.com/" target="_blank">Me</a>.<br />To start a new chat, click below.</p>
+		<p>This is my first <b>Ruby on Rails</b> web application so please email any bugs you find to tarnfeld [at] me.com for me to take a look at and learn from. Thanks.</p>
+
+		<%= link_to({:controller => "chat", :action => "new"}, {:class => "button"}) do %>
+			<button>New Chat</button>
+		<% end %>
+		
+		<h4 class="help">With help from...</h4>
+		<ul class="help">
+			<li><a href="http://twitter.com/vangenie/" target="_blank">Leonard Schwarz</a> (Design/UI Tweaks)</li>
+			<li><a href="http://twitter.com/wildfalcon/" target="_blank">Laurie Young</a> (Ruby &amp; Rails Help)</li>
+			<li><a href="http://forrst.com/posts/Hey_Forrsters_I_started_learning_Ruby_Rails-Cv0" target="_blank">Forrst Members</a> (Awesome Comments!)</li>
+			<li><a href="http://drewwilson.com/" target="_blank">Drew Wilson</a> (For his jQuery <a href="http://code.drewwilson.com/entry/tiptip-jquery-plugin" target="_blank">tipTip</a> plugin!)</li>
+		</ul>
+		
+	</div>
+
+</div>

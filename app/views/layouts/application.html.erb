@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pusher Chat</title>
+  <%= stylesheet_link_tag "style", "tipTip" %>
+  <%= javascript_include_tag "http://code.jquery.com/jquery-1.4.4.min.js", "jquery.tipTip.minified", "base", "chat.functions" %>
+</head>
+<body>
+
+<%= yield %>
+
+<div id="footer">
+	<p>Pusher Chat is proudly powered by <a href="http://pusherapp.com/" target="_blank">Pusher App</a>. Created by <a href="http://tarnfeld.com/" target="_blank">Tom Arnfeld</a>.</p>
+</div>
+
+</body>
+</html>
