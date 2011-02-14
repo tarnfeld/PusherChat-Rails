@@ -20,7 +20,7 @@ $(document).ready(function()
 	// Pusher.log = function() { if (window.console) window.console.log.apply(window.console, arguments); };
 	
 	Pusher.channel_auth_endpoint = '/api/authenticate?user_id=' + user_id;
-	var socket = new Pusher('79803e65e4820c3226b7');
+	var socket = new Pusher(PUSHER_KEY);
 	
 	// Global variable "channel" is set in the view
 	var presenceChannel = socket.subscribe('presence-' + channel);
