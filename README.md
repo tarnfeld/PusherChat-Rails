@@ -13,7 +13,7 @@ Start the server
 
     $ script/rails server
 
-Visit <http://localhost:3000/> is two browsers and start chatting.
+Visit <http://localhost:3000/> in two browsers and start chatting.
 
 ### Debugging
 
