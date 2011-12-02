@@ -1,11 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.2'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+# gem 'mysql2'
+gem 'sqlite3'
+
+# Use jQuery-Rails
+gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'

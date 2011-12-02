@@ -11,7 +11,7 @@ Add some Pusher credentials in `config/initializers/pusher.rb`
 
 Start the server
 
-    $ script/rails server
+    $ rails s
 
 Visit <http://localhost:3000/> in two browsers and start chatting.
 
@@ -20,4 +20,4 @@ Visit <http://localhost:3000/> in two browsers and start chatting.
 If something isn't working it's most likely the Pusher credentials:
 
 * Take a look at the Rails log for any Pusher errors
-* Enable javascript debugging on line 20 of `public/javascripts/chat.js`
+* Enable javascript debugging on line 20 of `app/assets/javascripts/chat.js`
