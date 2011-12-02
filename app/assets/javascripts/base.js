@@ -1,7 +1,5 @@
 $(function() {
-
 	re_tiptip();
-	
 });
 
 function re_tiptip() { 
