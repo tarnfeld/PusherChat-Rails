@@ -8,14 +8,16 @@ $(document).ready(function()
 	var audio = document.createElement("audio");
 	var audio_types = ["ogg", "mpeg", "wav"];
 	// Loop through the types I have and break out when the browser says it might be able to play one
-	for(type in audio_types) {
-		var type_name = audio_types[type];
-		if(audio.canPlayType("audio/" + type_name) == "yes" || audio.canPlayType("audio/" + type_name) == "maybe") {
-			browser_audio_type = type_name;
-			break;
-		}
+	if (typeof audio.canPlayType == 'function') {
+  	for(type in audio_types) {
+  		var type_name = audio_types[type];
+  		if(audio.canPlayType("audio/" + type_name) == "yes" || audio.canPlayType("audio/" + type_name) == "maybe") {
+  			browser_audio_type = type_name;
+  			break;
+  		}
+  	}
 	}
-	
+
 	// Logging - Disable in production
 	// Pusher.log = function() { if (window.console) window.console.log.apply(window.console, arguments); };
 	
