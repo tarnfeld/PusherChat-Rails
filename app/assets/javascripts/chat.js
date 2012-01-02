@@ -27,20 +27,20 @@ $(document).ready(function()
 
 	// Increment the number of people in the room when you successfully subscribe to the room
 	presenceChannel.bind('pusher:subscription_succeeded', function(member_list){
-		updateCount(member_list.length);
+		updateCount(member_list.count);
 	})
 
 	// When somebody joins, pop a note to tell the user
 	presenceChannel.bind('pusher:member_added', function(member) {
 		$('#messages').append('<li class="note"><strong>' + member.chat_user.nickname + '</strong> joined the chat.</li>');
-		$("#messages").attr("scrollTop",$("#messages").attr("scrollHeight") - $('#messages').height());
+		scrollToTheTop();
 		updateCount(1);
 	});
 	
 	// When somebody leaves, pop a note to tell the user
 	presenceChannel.bind('pusher:member_removed', function(member) {
 		$('#messages').append('<li class="note"><strong>' + member.chat_user.nickname + '</strong> left the chat.</li>');
-		$("#messages").attr("scrollTop",$("#messages").attr("scrollHeight") - $('#messages').height());
+		scrollToTheTop();
 		updateCount(-1);
 	});
 	
@@ -54,7 +54,7 @@ $(document).ready(function()
 		{
 			$('#messages').append('<li class="note"><strong>' + member.old_nickname + '</strong> updated their nickname to <strong>' + member.nickname + '</strong>.</li>');
 		}
-		$("#messages").attr("scrollTop",$("#messages").attr("scrollHeight") - $('#messages').height());
+		scrollToTheTop();
 	});
 
 	// Deal with incoming messages!
@@ -92,7 +92,7 @@ $(document).ready(function()
 		
 		$('#messages').append('<li class="' + you + 'just_added_id_' + message.id + '" style="display:none;"><strong>' + message.user.nickname + '</strong> said:<br />' + replaceURLWithHTMLLinks(message.message) + '</li>');
 		$('#messages li.just_added_id_' + message.id).fadeIn();
-		$("#messages").attr("scrollTop",$("#messages").attr("scrollHeight") - $('#messages').height());
+		scrollToTheTop();
 	});
 	
 	// Typing Messages
@@ -103,13 +103,13 @@ $(document).ready(function()
 		} else {
 			$('#messages #is_typing_' + notification.user.id).remove();
 		}
-		$("#messages").attr("scrollTop",$("#messages").attr("scrollHeight") - $('#messages').height());
+		scrollToTheTop();
 	});
 	
 	// Now pusher is all setup lets let the user go wild!
 	$('#loading').fadeOut();
-	$('#message').attr("disabled","");
-	$("#messages").attr("scrollTop",$("#messages").attr("scrollHeight") - $('#messages').height());
+	$('#message').removeAttr("disabled");
+	scrollToTheTop();
 	
 	// Enter key to send message
 	$('#message').keydown(function(e)

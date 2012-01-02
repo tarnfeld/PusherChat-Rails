@@ -2,11 +2,11 @@
 <html>
 <head>
   <title>Pusher Chat</title>
-  <%= stylesheet_link_tag "style", "tipTip" %>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
   <script type="text/javascript" charset="utf-8">
     var PUSHER_KEY = '<%= Pusher.key %>'
   </script>
-  <%= javascript_include_tag "http://code.jquery.com/jquery-1.4.4.min.js", "jquery.tipTip.minified", "base", "chat.functions" %>
 </head>
 <body>
 
